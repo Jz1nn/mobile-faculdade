@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Calculo ICMS</string>
+    <string name="imagem_brasil">Imagem Brasil</string>
+    <string name="digite_o_estado">Digite o Estado:</string>
+    <string name="digite_o_estado_aqui">Digite o Estado aqui</string>
+    <string name="digite_o_valor_da_mercadoria">Digite o Valor da Mercadoria</string>
+    <string name="digite_o_valor_aqui">Digite o Valor aqui</string>
+    <string name="porcentagem_do_icms">Porcentagem do ICMS:</string>
+    <string name="percent">%</string>
+    <string name="valor_total_da_mercadoria">Valor Total da Mercadoria:</string>
+    <string name="r_0_00">R$ 0,00</string>
+    <string name="calcular">Calcular</string>
+</resources>
