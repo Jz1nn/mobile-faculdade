@@ -10,13 +10,13 @@
         android:layout_margin="8dp"
         android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:contentDescription="@string/imagem_brasil"
-        android:src="@drawable/brasil"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:contentDescription="@string/imagem_brasil"
+            android:src="@drawable/brasil" />
 
-    <TextView
+        <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/digite_o_estado"/>
@@ -88,7 +88,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/calcular"
-        tools:ignore="VisualLintButtonSize" />
+        android:onClick="calcular">
+    </Button>
 
     </LinearLayout>
 

@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Login kroton</string>
-    <string name="kroton">Kroton</string>
+    <string name="app_name">Loginkroton</string>
+    <string name="kroton">kroton</string>
     <string name="qual_o_seu_curso">Qual o seu curso?</string>
     <string name="digite_aqui">Digite aqui</string>
     <string name="o_curso_digitado">O curso digitado é</string>
