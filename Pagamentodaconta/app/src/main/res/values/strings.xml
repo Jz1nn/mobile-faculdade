@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Pagamento da conta</string>
+    <string name="valor_da_conta">Valor da Conta</string>
+    <string name="dinheiro">Dinheiro:</string>
+    <string name="limpar_valores">Limpar valores</string>
+    <string name="calcular">Calcular</string>
+    <string name="valor_da_taxa_de_servi_o">Valor da Taxa de Serviço</string>
+    <string name="r_0_00">R$ 0,00</string>
+    <string name="total">Total</string>
+    <string name="troco">Troco</string>
+</resources>
