@@ -1,12 +1,11 @@
 package com.pagamentodaconta;
 
-import android.annotation.SuppressLint;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity{
         mTextViewTroco = findViewById(R.id.textViewTroco);
     }
 
-    @SuppressLint("DefaultLocale")
+
     public void calcular(View view){
         String valorContaDigitada = mEditTextValorConta.getText().toString();
         String valorDinheiroDigitado = mEditTextDinheiro.getText().toString();
