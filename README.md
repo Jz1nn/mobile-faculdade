@@ -11,3 +11,6 @@
 
 ### Bill payment
 ![Pagamento-da-conta](screenshots/Pagamento-da-conta.1.png)
+
+### QUESTIONS AND ANSWERS GAME USING FRAGMENTS
+![APP-JogoFragments](screenshots/QAGAMEFRAGMENTS.png)
