@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    tools:context=".JogarFragment">
+
+    <TextView
+        android:id="@+id/pergunta"
+        style="@style/textoPadrao"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#C4FFE3"
+        android:gravity="center"
+        android:text="@string/pergunta" />
+
+    <TextView
+        android:id="@+id/resposta"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        style="@style/textoPadrao"
+        android:layout_below="@+id/pergunta"
+        android:text="@string/resposta"
+        android:background="#DCE0FB"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:id="@+id/botoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@+id/botaoCadastrarPR">
+
+        <Button
+            android:id="@+id/botaoExibirResposta"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:text="@string/ex_resposta"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            tools:ignore="ButtonStyle,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/botaoPular"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginStart="15dp"
+            android:text="@string/pular"
+            android:drawableEnd="@android:drawable/ic_media_next"
+            android:textSize="18sp"
+            android:layout_weight="0"
+            tools:ignore="ButtonStyle" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/botaoCadastrarPR"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/purple_200"
+        android:text="@string/cadastrar_perguntas_e_respostas"
+        android:textColor="#311B92"
+        android:textSize="18sp"
+        tools:ignore="VisualLintButtonSize" />
+
+</RelativeLayout>

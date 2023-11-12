@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">jogofragments</string>
+    <string name="pergunta">Pergunta</string>
+    <string name="resposta">Resposta</string>
+    <string name="ex_resposta">Ex. Resposta</string>
+    <string name="pular">Pular</string>
+    <string name="cadastrar_perguntas_e_respostas">Cadastrar perguntas e respostas</string>
+    <string name="qual_a_pergunta">Qual a pergunta?</string>
+    <string name="pergunt">Pergunta</string>
+    <string name="qual_a_pergunt">Qual a pergunta?</string>
+    <string name="pergun">Pergunta</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="jogar">Jogar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

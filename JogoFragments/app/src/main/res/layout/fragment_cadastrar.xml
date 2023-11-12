@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cadastrarFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastrarFragment"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:id="@+id/textoPergunta"
+        style="@style/textoPadrao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="@string/qual_a_pergunta" />
+
+    <EditText
+        android:id="@+id/editPergunta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textoPergunta"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:hint="@string/pergunt"
+        android:inputType="text"
+        android:minHeight="48dp"
+        tools:ignore="VisualLintTextFieldSize,DuplicateSpeakableTextCheck"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/textoResposta"
+        style="@style/textoPadrao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editPergunta"
+        android:layout_alignParentStart="true"
+        android:text="@string/qual_a_pergunt" />
+
+    <EditText
+        android:id="@+id/editResposta"
+        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textoResposta"
+        android:layout_alignParentStart="true"
+        android:hint="@string/pergun"
+        tools:ignore="VisualLintTextFieldSize"
+        android:inputType="text"
+        android:autofillHints="" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/botaoCadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:text="@string/cadastrar"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            tools:ignore="ButtonStyle,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/botaoJogar"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginStart="15dp"
+            android:text="@string/jogar"
+            android:drawableEnd="@android:drawable/ic_media_play"
+            android:textSize="18sp"
+            android:layout_weight="0"
+            tools:ignore="ButtonStyle" />
+
+    </LinearLayout>
+
+</RelativeLayout>
