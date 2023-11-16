@@ -14,3 +14,6 @@
 
 ### QUESTIONS AND ANSWERS GAME USING FRAGMENTS
 ![APP-JogoFragments](screenshots/QAGAMEFRAGMENTS.png)
+
+### App Gym using RecyclerView
+![APP-RecyclerView](screenshots/AcademiaRecyclerView.png)
