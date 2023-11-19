@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "275550894328",
+    "project_id": "academiarecyclerview",
+    "storage_bucket": "academiarecyclerview.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275550894328:android:a5b1a73361f7de973b630d",
+        "android_client_info": {
+          "package_name": "com.example.academiarecyclerview"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV1wFDnPS1eHVGEmoEg5aFWCh9QWAmNlk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
