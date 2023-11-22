@@ -11,24 +11,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class AcademiaAdaptador extends RecyclerView.Adapter<AcademiaAdaptador.AcademiaViewHolder> {
+    private List<Aluno> mListAluno; // Cria a lista de alunos
 
-    private List<Aluno> mListAlunos; // Adicionando a lista de alunos
-
-    // Construtor para receber a lista de alunos
-    public AcademiaAdaptador(List<Aluno> listaAlunos) {
-        this.mListAlunos = listaAlunos;
-    }
-
+    @NonNull
     @Override
     public AcademiaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_aluno, parent, false);
-        return new AcademiaViewHolder(view);
+        AcademiaViewHolder viewHolder = new AcademiaViewHolder(view);
+        return viewHolder;
     }
 
     // Metodo para criar as view (layout manager chama esse metodo)
     @Override
     public void onBindViewHolder(@NonNull AcademiaViewHolder holder, int position) {
-        Aluno aluno = mListAlunos.get(position);
+        Aluno aluno = mListAluno.get(position);
 
         // Atualizar os TextViews com os dados do Aluno
         holder.textViewNome.setText(aluno.getNome());
@@ -41,26 +37,14 @@ public class AcademiaAdaptador extends RecyclerView.Adapter<AcademiaAdaptador.Ac
     // Metodo para retornar o numero de itens na lista (layout manager chama esse metodo)
     @Override
     public int getItemCount() {
-        if (mListAlunos != null) {
-            return mListAlunos.size();
-        } else {
-            return 0;
-        }
-    }
+        if (mListAluno == null) return 0;
+        return mListAluno.size();
 
-    public void atualizarLista(List<Aluno> novaListaAlunos) {
-        if (mListAlunos != null) {
-            mListAlunos.clear(); // Limpa a lista atual de alunos
-            mListAlunos.addAll(novaListaAlunos); // Adiciona a nova lista de alunos
-            notifyItemRangeInserted(0, novaListaAlunos.size()); // Notifica sobre a inserção de novos itens
-        } else {
-            mListAlunos = novaListaAlunos; // Se a lista atual estiver vazia, apenas atribui a nova lista
-            notifyDataSetChanged(); // Notifica o RecyclerView sobre as mudanças nos dados
-        }
     }
 
     // INNER CLASS Classe ViewHolder para manter as referências das views
     public static class AcademiaViewHolder extends RecyclerView.ViewHolder {
+
         TextView textViewNome;
         TextView textViewIdade;
         TextView textViewAltura;
@@ -80,20 +64,31 @@ public class AcademiaAdaptador extends RecyclerView.Adapter<AcademiaAdaptador.Ac
     }
 
     // Método para atualizar a lista (caso haja alterações)
-    // Métodos para notificar o Adapter sobre mudanças nos itens da listagem
-    public void adicionarAluno(Aluno aluno) {
-        mListAlunos.add(aluno);
-        notifyItemInserted(mListAlunos.size() - 1);
+    public void atualizarListagemCompleta(List<Aluno> mListProduto) {
+        // Atualiza a listagem do Adaptador
+        this.mListAluno = mListProduto;
+
+        // Notifica o Adaptador para atualizar a listagem completa
+        notifyDataSetChanged();
     }
 
-    public void removerAluno(int position) {
-        mListAlunos.remove(position);
+    // Métodos para notificar o Adapter sobre mudanças nos itens da listagem
+    public void inserirItemNaListagem(int position, List<Aluno> mListAluno) {
+        this.mListAluno = mListAluno;
+        // Notifica o Adaptador para inserir o item de acordo com a posicao recebida no parametro
+        notifyItemInserted(position);
+    }
+
+    public void excluirItemDaListagem(int position, List<Aluno> mListAluno) {
+        this.mListAluno = mListAluno;
+        // Notifica o Adaptador para remover o item de acordo com a posicao recebida no parametro
         notifyItemRemoved(position);
     }
 
-    public void atualizarAluno(int position, Aluno aluno) {
-        mListAlunos.set(position, aluno);
+    public void atualizarItemNaListagem(int position, List<Aluno> mListAluno) {
+        this.mListAluno = mListAluno;
+
+        // Notifica o Adaptador para atualizar os dados do item de acordo com a posicao recebida no parametro
         notifyItemChanged(position);
     }
-
 }

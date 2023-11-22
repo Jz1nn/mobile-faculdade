@@ -7,16 +7,13 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mButtonListagem;
-    private Button mButtonCadastro;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mButtonListagem = findViewById(R.id.buttonListagem);
-        mButtonCadastro = findViewById(R.id.buttonCadastro);
+        Button mButtonListagem = findViewById(R.id.buttonListagem);
+        Button mButtonCadastro = findViewById(R.id.buttonCadastro);
 
         mButtonListagem.setOnClickListener(new View.OnClickListener() {
             @Override

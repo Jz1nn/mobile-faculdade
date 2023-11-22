@@ -2,11 +2,17 @@ package com.example.academiarecyclerview;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +20,13 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class CadastroFragment extends Fragment {
+
+    private Button mbuttonSalvar;
+    private EditText mEditTextNome;
+    private EditText mEditTextIdade;
+    private EditText mEditTextAltura;
+    private EditText mEditTextPeso;
+    private EditText mEditTextUnidadeCadastro;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -44,6 +57,46 @@ public class CadastroFragment extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        mbuttonSalvar = getActivity().findViewById(R.id.salvar);
+        mEditTextNome = getActivity().findViewById(R.id.nome);
+        mEditTextIdade = getActivity().findViewById(R.id.idade);
+        mEditTextAltura = getActivity().findViewById(R.id.altura);
+        mEditTextPeso = getActivity().findViewById(R.id.peso);
+        mEditTextUnidadeCadastro = getActivity().findViewById(R.id.unidadeCadastro);
+
+        mbuttonSalvar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                String nome = mEditTextNome.getText().toString();
+                int idade = Integer.parseInt(mEditTextIdade.getText().toString());
+                double altura = Double.parseDouble(mEditTextAltura.getText().toString());
+                double peso = Double.parseDouble(mEditTextPeso.getText().toString());
+                String unidadeCadastro = mEditTextUnidadeCadastro.getText().toString();
+
+                Aluno aluno = new Aluno(nome, idade, altura, peso, unidadeCadastro);
+
+                DatabaseReference reference = FirebaseDatabase
+                        .getInstance()
+                        .getReference()
+                        .child("Alunos");
+
+                reference
+                        .push()
+                        .setValue(aluno);
+
+                mEditTextNome.setText("");
+                mEditTextIdade.setText("");
+                mEditTextAltura.setText("");
+                mEditTextPeso.setText("");
+                mEditTextUnidadeCadastro.setText("");
+            }
+        });
     }
 
     @Override
